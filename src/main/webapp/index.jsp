@@ -5,21 +5,11 @@
 <%@ page import="org.jasig.cas.client.util.AssertionHolder"%>
 <%@ page import="org.jasig.cas.client.authentication.AttributePrincipal"%>
 
-<script>
-function ssoLogout(){
-	if(confirm('确定要退出系统吗？')){
-		//top.location.href ='http://sso.jadyer.com:8080/cas-server-web/logout?service=http://sso.jadyer.com:8080/cas-server-web/login';
-		//top.location.href ='<%=ConfigUtil.INSTANCE.getProperty("casServerLogoutUrl")%>';
-		top.location.href ='<%=ConfigUtil.INSTANCE.getProperty("casServerLogoutUrl")%>?service=http://blog.csdn.net/jadyer';
-	}
-}
-</script>
-
 <body style="background-color:#CBE0C9;">
 	<span style="color:red; font-size:32px; font-weight:bold;">客户端登录成功</span>
 	<br>
 	<br>
-	<a href="javascript:ssoLogout();">我要登出</a>
+	<a href="<%=ConfigUtil.INSTANCE.getProperty("casServerLogoutUrl")%>?service=<%=ConfigUtil.INSTANCE.getProperty("casClientServerName")%>">我要登出</a>
 </body>
 
 <hr size="2">
